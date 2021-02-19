@@ -9,7 +9,7 @@ use webignition\YamlDocument\Document;
 
 class DocumentTest extends TestCase
 {
-    public function testCreate()
+    public function testCreate(): void
     {
         $document = new Document();
         self::assertSame('', $document->getContent());
@@ -21,7 +21,7 @@ class DocumentTest extends TestCase
         self::assertFalse($document->isEmpty());
     }
 
-    public function testAppend()
+    public function testAppend(): void
     {
         $document = new Document();
         self::assertSame('', $document->getContent());
@@ -40,11 +40,14 @@ class DocumentTest extends TestCase
      * @param Document $document
      * @param mixed $expectedParsedDocument
      */
-    public function testParse(Document $document, $expectedParsedDocument)
+    public function testParse(Document $document, $expectedParsedDocument): void
     {
         self::assertSame($expectedParsedDocument, $document->parse());
     }
 
+    /**
+     * @return array[]
+     */
     public function parseDataProvider(): array
     {
         return [
@@ -78,11 +81,14 @@ class DocumentTest extends TestCase
     /**
      * @dataProvider isDocumentStartDataProvider
      */
-    public function testIsDocumentStart(string $line, bool $expectedIsDocumentStart)
+    public function testIsDocumentStart(string $line, bool $expectedIsDocumentStart): void
     {
         self::assertSame($expectedIsDocumentStart, Document::isDocumentStart($line));
     }
 
+    /**
+     * @return array[]
+     */
     public function isDocumentStartDataProvider(): array
     {
         return [
@@ -112,11 +118,14 @@ class DocumentTest extends TestCase
     /**
      * @dataProvider isDocumentEndDataProvider
      */
-    public function testIsDocumentEnd(string $line, bool $expectedIsDocumentEnd)
+    public function testIsDocumentEnd(string $line, bool $expectedIsDocumentEnd): void
     {
         self::assertSame($expectedIsDocumentEnd, Document::isDocumentEnd($line));
     }
 
+    /**
+     * @return array[]
+     */
     public function isDocumentEndDataProvider(): array
     {
         return [
