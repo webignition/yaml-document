@@ -45,7 +45,7 @@ class DocumentTest extends TestCase
     }
 
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function parseDataProvider(): array
     {
@@ -86,7 +86,7 @@ class DocumentTest extends TestCase
     }
 
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function isDocumentStartDataProvider(): array
     {
@@ -123,7 +123,7 @@ class DocumentTest extends TestCase
     }
 
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function isDocumentEndDataProvider(): array
     {
