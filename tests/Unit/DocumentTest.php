@@ -37,7 +37,6 @@ class DocumentTest extends TestCase
     /**
      * @dataProvider parseDataProvider
      *
-     * @param Document $document
      * @param mixed $expectedParsedDocument
      */
     public function testParse(Document $document, $expectedParsedDocument): void
