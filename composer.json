@@ -38,7 +38,7 @@
         ]
     },
     "require": {
-        "php": ">=7.4|^8",
+        "php": "8.0|8.1",
         "symfony/yaml": "^5.2"
     },
     "require-dev": {
