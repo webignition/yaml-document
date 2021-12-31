@@ -40,8 +40,6 @@ class Document
     }
 
     /**
-     * @param SymfonyYamlParser|null $parser
-     *
      * @return mixed
      */
     public function parse(?SymfonyYamlParser $parser = null)
@@ -59,7 +57,7 @@ class Document
             return false;
         }
 
-        return substr($line, 0, self::DOCUMENT_START_LENGTH) === self::DOCUMENT_START;
+        return self::DOCUMENT_START === substr($line, 0, self::DOCUMENT_START_LENGTH);
     }
 
     public static function isDocumentEnd(string $line): bool
@@ -68,6 +66,6 @@ class Document
             return false;
         }
 
-        return substr($line, 0, self::DOCUMENT_END_LENGTH) === self::DOCUMENT_END;
+        return self::DOCUMENT_END === substr($line, 0, self::DOCUMENT_END_LENGTH);
     }
 }

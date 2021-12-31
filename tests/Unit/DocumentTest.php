@@ -37,7 +37,6 @@ class DocumentTest extends TestCase
     /**
      * @dataProvider parseDataProvider
      *
-     * @param Document $document
      * @param mixed $expectedParsedDocument
      */
     public function testParse(Document $document, $expectedParsedDocument): void
@@ -46,7 +45,7 @@ class DocumentTest extends TestCase
     }
 
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function parseDataProvider(): array
     {
@@ -87,7 +86,7 @@ class DocumentTest extends TestCase
     }
 
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function isDocumentStartDataProvider(): array
     {
@@ -124,7 +123,7 @@ class DocumentTest extends TestCase
     }
 
     /**
-     * @return array[]
+     * @return array<mixed>
      */
     public function isDocumentEndDataProvider(): array
     {
