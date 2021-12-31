@@ -39,7 +39,7 @@
     },
     "require": {
         "php": "8.0|8.1",
-        "symfony/yaml": "^5.2"
+        "symfony/yaml": "^5.4|^6.0"
     },
     "require-dev": {
         "phpstan/extension-installer": "^1.1",
