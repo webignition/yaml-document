@@ -8,11 +8,19 @@ on:
 
 jobs:
   unit:
-    name: PHPUnit unit tests - PHP ${{ matrix.php }} ${{ matrix.operating-system }}
+    name: PHPUnit unit tests - PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }}
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
         php: ['8.0', '8.1']
+        symfony: [ '5.4.*', '6.0.*' ]
+        include:
+          - symfony: 5.4.*
+            composer-flags: --prefer-lowest
+
+          - symfony: 6.0.*
+            composer-flags: --prefer-stable
+
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Checkout
@@ -26,8 +34,8 @@ jobs:
       - name: Download dependencies
         uses: php-actions/composer@v6
         with:
-          php_version:  ${{ matrix.php }}
-          args: --ignore-platform-reqs --quiet
+          command: update
+          args: --ignore-platform-reqs ${{ matrix.composer-flags }}
 
       - name: Run PHPUnit unit tests
         run: composer test
