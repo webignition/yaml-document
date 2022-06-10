@@ -36,10 +36,8 @@ class DocumentTest extends TestCase
 
     /**
      * @dataProvider parseDataProvider
-     *
-     * @param mixed $expectedParsedDocument
      */
-    public function testParse(Document $document, $expectedParsedDocument): void
+    public function testParse(Document $document, mixed $expectedParsedDocument): void
     {
         self::assertSame($expectedParsedDocument, $document->parse());
     }
