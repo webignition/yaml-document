@@ -14,11 +14,9 @@ class Document
     private const DOCUMENT_START_LENGTH = 3;
     private const DOCUMENT_END_LENGTH = 3;
 
-    private string $content;
-
-    public function __construct(string $content = '')
-    {
-        $this->content = $content;
+    public function __construct(
+        private string $content = ''
+    ) {
     }
 
     public function getContent(): string
@@ -39,10 +37,7 @@ class Document
         return $new;
     }
 
-    /**
-     * @return mixed
-     */
-    public function parse(?SymfonyYamlParser $parser = null)
+    public function parse(?SymfonyYamlParser $parser = null): mixed
     {
         if (null === $parser) {
             $parser = new SymfonyYamlParser();
