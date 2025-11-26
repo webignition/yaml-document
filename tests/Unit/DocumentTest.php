@@ -62,14 +62,14 @@ class DocumentTest extends TestCase
             ],
             'simple array' => [
                 'document' => new Document(
-                    '- one' . "\n" .
-                    '- two' . "\n" .
-                    '- three'
+                    '- one' . "\n"
+                    . '- two' . "\n"
+                    . '- three'
                 ),
                 'expectedParsedContent' => [
                     'one',
                     'two',
-                    'three'
+                    'three',
                 ],
             ],
         ];

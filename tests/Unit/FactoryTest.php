@@ -59,9 +59,9 @@ class FactoryTest extends TestCase
                 ],
                 'expectedDocuments' => [
                     new Document(
-                        '- item1' . "\n" .
-                        '- item2' . "\n" .
-                        '- item3' . "\n"
+                        '- item1' . "\n"
+                        . '- item2' . "\n"
+                        . '- item3' . "\n"
                     ),
                 ],
             ],
@@ -74,9 +74,9 @@ class FactoryTest extends TestCase
                 ],
                 'expectedDocuments' => [
                     new Document(
-                        '- item1' . "\n" .
-                        '- item2' . "\n" .
-                        '- item3' . "\n"
+                        '- item1' . "\n"
+                        . '- item2' . "\n"
+                        . '- item3' . "\n"
                     ),
                 ],
             ],
@@ -89,9 +89,9 @@ class FactoryTest extends TestCase
                 ],
                 'expectedDocuments' => [
                     new Document(
-                        '- item1' . "\n" .
-                        '- item2' . "\n" .
-                        '- item3' . "\n"
+                        '- item1' . "\n"
+                        . '- item2' . "\n"
+                        . '- item3' . "\n"
                     ),
                 ],
             ],
@@ -105,9 +105,9 @@ class FactoryTest extends TestCase
                 ],
                 'expectedDocuments' => [
                     new Document(
-                        '- item1' . "\n" .
-                        '- item2' . "\n" .
-                        '- item3' . "\n"
+                        '- item1' . "\n"
+                        . '- item2' . "\n"
+                        . '- item3' . "\n"
                     ),
                 ],
             ],
@@ -124,12 +124,12 @@ class FactoryTest extends TestCase
                 ],
                 'expectedDocuments' => [
                     new Document(
-                        '- item1.1' . "\n" .
-                        '- item1.2' . "\n"
+                        '- item1.1' . "\n"
+                        . '- item1.2' . "\n"
                     ),
                     new Document(
-                        '- item2.1' . "\n" .
-                        '- item2.2' . "\n"
+                        '- item2.1' . "\n"
+                        . '- item2.2' . "\n"
                     ),
                 ],
             ],
@@ -145,12 +145,12 @@ class FactoryTest extends TestCase
                 ],
                 'expectedDocuments' => [
                     new Document(
-                        '- item1.1' . "\n" .
-                        '- item1.2' . "\n"
+                        '- item1.1' . "\n"
+                        . '- item1.2' . "\n"
                     ),
                     new Document(
-                        '- item2.1' . "\n" .
-                        '- item2.2' . "\n"
+                        '- item2.1' . "\n"
+                        . '- item2.2' . "\n"
                     ),
                 ],
             ],
@@ -165,14 +165,14 @@ class FactoryTest extends TestCase
                 ],
                 'expectedDocuments' => [
                     new Document(
-                        '- item1.1' . "\n" .
-                        '- item1.2' . "\n" .
-                        '- item1.3' . "\n"
+                        '- item1.1' . "\n"
+                        . '- item1.2' . "\n"
+                        . '- item1.3' . "\n"
                     ),
                     new Document(
-                        '- item2.1' . "\n" .
-                        '- item2.2' . "\n" .
-                        '- item2.3' . "\n"
+                        '- item2.1' . "\n"
+                        . '- item2.2' . "\n"
+                        . '- item2.3' . "\n"
                     ),
                 ],
             ],
@@ -185,9 +185,9 @@ class FactoryTest extends TestCase
                 ],
                 'expectedDocuments' => [
                     new Document(
-                        '- item1' . "\n" .
-                        '- item2' . "\n" .
-                        '- item3' . "\n"
+                        '- item1' . "\n"
+                        . '- item2' . "\n"
+                        . '- item3' . "\n"
                     ),
                 ],
             ],
