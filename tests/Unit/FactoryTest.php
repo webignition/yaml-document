@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace webignition\YamlDocument\Tests\Unit;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use webignition\YamlDocument\Document;
 use webignition\YamlDocument\Factory;
@@ -20,11 +21,10 @@ class FactoryTest extends TestCase
     }
 
     /**
-     * @dataProvider processDataProvider
-     *
      * @param string[]   $contentChunks
      * @param Document[] $expectedDocuments
      */
+    #[DataProvider('processDataProvider')]
     public function testProcess(array $contentChunks, array $expectedDocuments): void
     {
         $documents = [];
@@ -44,7 +44,7 @@ class FactoryTest extends TestCase
     /**
      * @return array<mixed>
      */
-    public function processDataProvider(): array
+    public static function processDataProvider(): array
     {
         return [
             'empty' => [
