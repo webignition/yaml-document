@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace webignition\YamlDocument\Tests\Unit;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use webignition\YamlDocument\Document;
 
@@ -34,9 +35,7 @@ class DocumentTest extends TestCase
         self::assertFalse($appendedDocument->isEmpty());
     }
 
-    /**
-     * @dataProvider parseDataProvider
-     */
+    #[DataProvider('parseDataProvider')]
     public function testParse(Document $document, mixed $expectedParsedDocument): void
     {
         self::assertSame($expectedParsedDocument, $document->parse());
@@ -45,20 +44,20 @@ class DocumentTest extends TestCase
     /**
      * @return array<mixed>
      */
-    public function parseDataProvider(): array
+    public static function parseDataProvider(): array
     {
         return [
             'empty' => [
                 'document' => new Document(),
-                'expectedParsedContent' => null,
+                'expectedParsedDocument' => null,
             ],
             'string' => [
                 'document' => new Document('string content'),
-                'expectedParsedContent' => 'string content',
+                'expectedParsedDocument' => 'string content',
             ],
             'int' => [
                 'document' => new Document('1'),
-                'expectedParsedContent' => 1,
+                'expectedParsedDocument' => 1,
             ],
             'simple array' => [
                 'document' => new Document(
@@ -66,7 +65,7 @@ class DocumentTest extends TestCase
                     . '- two' . "\n"
                     . '- three'
                 ),
-                'expectedParsedContent' => [
+                'expectedParsedDocument' => [
                     'one',
                     'two',
                     'three',
@@ -75,9 +74,7 @@ class DocumentTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider isDocumentStartDataProvider
-     */
+    #[DataProvider('isDocumentStartDataProvider')]
     public function testIsDocumentStart(string $line, bool $expectedIsDocumentStart): void
     {
         self::assertSame($expectedIsDocumentStart, Document::isDocumentStart($line));
@@ -86,7 +83,7 @@ class DocumentTest extends TestCase
     /**
      * @return array<mixed>
      */
-    public function isDocumentStartDataProvider(): array
+    public static function isDocumentStartDataProvider(): array
     {
         return [
             'empty' => [
@@ -112,9 +109,7 @@ class DocumentTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider isDocumentEndDataProvider
-     */
+    #[DataProvider('isDocumentEndDataProvider')]
     public function testIsDocumentEnd(string $line, bool $expectedIsDocumentEnd): void
     {
         self::assertSame($expectedIsDocumentEnd, Document::isDocumentEnd($line));
@@ -123,7 +118,7 @@ class DocumentTest extends TestCase
     /**
      * @return array<mixed>
      */
-    public function isDocumentEndDataProvider(): array
+    public static function isDocumentEndDataProvider(): array
     {
         return [
             'empty' => [
