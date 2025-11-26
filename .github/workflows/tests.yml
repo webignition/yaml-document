@@ -12,13 +12,6 @@ jobs:
     strategy:
       matrix:
         php: ['8.4']
-        symfony: ['6.0.*', '6.1.*']
-        include:
-          - symfony: 6.0.*
-            composer-flags: --prefer-lowest
-
-          - symfony: 6.1.*
-            composer-flags: --prefer-stable
     runs-on: ubuntu-latest
 
     steps:
@@ -34,7 +27,7 @@ jobs:
         uses: php-actions/composer@v6
         with:
           command: update
-          args: --ignore-platform-reqs ${{ matrix.composer-flags }}
+          args: --ignore-platform-reqs
 
       - name: Run PHPUnit unit tests
         run: composer test
