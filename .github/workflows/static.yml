@@ -8,12 +8,11 @@ on:
 
 jobs:
   phpstan:
-    name: PHPStan - PHP ${{ matrix.php }} ${{ matrix.operating-system }}
+    name: PHPStan - PHP ${{ matrix.php }}
     strategy:
       matrix:
-        operating-system: [ubuntu-latest]
-        php: ['8.1']
-    runs-on: ${{ matrix.operating-system }}
+        php: ['8.4']
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
