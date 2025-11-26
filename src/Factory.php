@@ -24,8 +24,7 @@ class Factory
 
         $this->onDocumentCreated = is_callable($onDocumentCreated)
             ? $onDocumentCreated
-            : function (Document $document) {
-            };
+            : function (Document $document) {};
     }
 
     public function process(string $content): void
