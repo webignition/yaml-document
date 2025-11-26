@@ -11,7 +11,7 @@ jobs:
     name: PHP CS Fixer Dry Run - PHP ${{ matrix.php }}
     strategy:
       matrix:
-        php: ['8.1']
+        php: ['8.4']
     runs-on: ubuntu-latest
 
     steps:
@@ -30,12 +30,12 @@ jobs:
         run: composer cs-fixer-dry-run
 
   phpcs:
-    name: PHPCS - PHP ${{ matrix.php }} ${{ matrix.operating-system }}
+    name: PHPCS - PHP ${{ matrix.php }}
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        php: ['8.1']
-    runs-on: ${{ matrix.operating-system }}
+        php: ['8.4']
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
